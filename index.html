@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aura - Fashion Store</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <h1>Aura</h1>
+
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#products">Collections</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search products..."
+                onkeyup="searchProducts()"
+            >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+        <div class="navbar-right">
+
+            <!-- Cart -->
+            <div class="cart-icon" onclick="openCart()">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span id="cart-count">0</span>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="navbar-menu-toggle" onclick="showNavbar()">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         SIDE NAVBAR
+    ========================== -->
+
+    <div class="side-navbar">
+
+        <div class="close-button">
+
+            <i class="fa-solid fa-xmark"
+                onclick="closeNavbar()">
+            </i>
+
+        </div>
+
+        <div class="side-navbar-links">
+
+            <a href="#home" onclick="closeNavbar()">
+                Home
+            </a>
+
+            <a href="#products" onclick="closeNavbar()">
+                Collections
+            </a>
+
+            <a href="#contact" onclick="closeNavbar()">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="new-collection">
+                NEW COLLECTION
+            </p>
+
+            <h1>
+                Level Up<br>
+                Your Style
+            </h1>
+
+            <p>
+                Discover our latest fashion collection
+                designed for your everyday style.
+            </p>
+
+            <a href="#products" class="shop-button">
+                Shop Now
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800"
+                alt="Fashion Collection"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="service">
+
+        <div class="service-box">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <div>
+                <h3>Free Delivery</h3>
+                <p>On orders above ₹999</p>
+            </div>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <div>
+                <h3>Secure Payment</h3>
+                <p>100% secure payment</p>
+            </div>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <div>
+                <h3>Customer Support</h3>
+                <p>We're here to help</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <section class="products-section" id="products">
+
+        <div class="section-title">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Featured Products</h2>
+
+        </div>
+
+        <div
+            class="products"
+            id="products-container">
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CART OVERLAY
+    ========================== -->
+
+    <div
+        class="cart-overlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <!-- =========================
+         CART SIDEBAR
+    ========================== -->
+
+    <div class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <i
+                class="fa-solid fa-xmark"
+                onclick="closeCart()">
+            </i>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cart-items">
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <strong id="cart-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <button onclick="checkout()">
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+        class="contact"
+        id="contact">
+
+        <h2>Contact Aura</h2>
+
+        <p>
+            Have any questions? We're happy to help.
+        </p>
+
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            support@aura.com
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h2>Aura</h2>
+
+        <p>
+            Fashion for every moment.
+        </p>
+
+        <p>
+            © 2026 Aura. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
