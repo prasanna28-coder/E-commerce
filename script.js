@@ -35,7 +35,7 @@ const products = [
     {
         id: 5,
         name: "Black T-Shirt",
-        price: 649,
+        price: 500,
         image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600"
     },
 
