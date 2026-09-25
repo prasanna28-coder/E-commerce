@@ -56,7 +56,7 @@ const products = [
     {
         id: 8,
         name: "Casual Pants",
-        price: 1099,
+        price: 1000,
         image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600"
     }
 
